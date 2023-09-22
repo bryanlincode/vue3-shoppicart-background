@@ -51,12 +51,17 @@ export default{
             // this.$http 為 axios 的方法
             this.$http.post(api,this.user)
             .then((res)=>{
-              console.log(res);
-                // 解構式存取  token, expired
-                const { token, expired  } = res.data 
-                console.log(token, expired);
-                //MAD 儲存 cokie方式
-                 document.cookie = `hexToken=${token};expires=${new Date(expired)};`; 
+              // 增加判斷 是否登入 轉跳
+              if (res.data.success) {
+                 console.log(res);
+               // 解構式存取  token, expired
+               const { token, expired } = res.data
+               console.log(token, expired);
+               //MAD 儲存 cokie方式
+               document.cookie = `hexToken=${token};expires=${new Date(expired)};`;
+                // 轉跳後台頁面
+                this.$router.push('/dashboard')
+              }
             })
 
            
