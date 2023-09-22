@@ -43,18 +43,20 @@ export default{
         }
     },
     methods:{
+        //登入方式 
         loginAPi(){
+             // 組裝路徑方式
             const api = `${process.env.VUE_APP_API}admin/signin`;
             // 觸發post http 至後端
-            // $http 為vue的方式
+            // this.$http 為 axios 的方法
             this.$http.post(api,this.user)
             .then((res)=>{
+              console.log(res);
                 // 解構式存取  token, expired
                 const { token, expired  } = res.data 
                 console.log(token, expired);
                 //MAD 儲存 cokie方式
                  document.cookie = `hexToken=${token};expires=${new Date(expired)};`; 
-
             })
 
            

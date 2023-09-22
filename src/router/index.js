@@ -15,10 +15,17 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
+  // 登入路由
   {
     path: '/login',
-    component: () => import('../views/Login.vue')
+    component: () => import('../views/Login.vue'),
+  },
+  // 儀表板路由
+  {
+    path: '/dashboard',
+    component: () => import('../views/Dashboard.vue'),
   }
+
 ]
 
 const router = createRouter({

@@ -1,4 +1,9 @@
 # vue3-shopcart-background
+    
+# Vue 後台功能說明
+## 登入功能
+## 登入驗證
+
 
 ## Project setup
 ```
