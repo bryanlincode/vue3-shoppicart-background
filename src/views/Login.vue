@@ -59,8 +59,8 @@ export default{
                console.log(token, expired);
                //MAD 儲存 cokie方式
                document.cookie = `hexToken=${token};expires=${new Date(expired)};`;
-                // 轉跳後台頁面
-                this.$router.push('/dashboard')
+                // 轉跳後台頁面 (產品頁面)
+                this.$router.push('/dashboard/product')
               }
             })
 
